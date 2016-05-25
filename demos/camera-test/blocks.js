@@ -121,6 +121,18 @@ Blockly.Blocks['email'] = {
   }
 };
 
+Blockly.Blocks['save_to_desktop'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Save file to Desktop");
+    this.setPreviousStatement(true, "image");
+    this.setNextStatement(false);
+    this.setColour(300);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
 Blockly.Blocks['add_tint'] = {
   init: function() {
     this.appendDummyInput()
