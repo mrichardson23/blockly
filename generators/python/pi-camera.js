@@ -6,6 +6,6 @@ goog.require('Blockly.Python');
 
 
 Blockly.Python['take_photo'] = function(block) {
-  var code = 'import picamera\nwith picamera.PiCamera() as camera:\n\tcamera.capture(\'foo.jpg\')';
+  var code = 'import picamera\nwith picamera.PiCamera() as camera:\n\tcamera.capture(\'/tmp/foo.jpg\')';
   return [code, Blockly.Python.ORDER_ADDITION];
 };
