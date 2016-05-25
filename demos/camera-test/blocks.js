@@ -23,6 +23,8 @@
  */
 'use strict';
 
+Blockly.BlockSvg.START_HAT = true;
+
 Blockly.Blocks['take_photo'] = {
   init: function() {
     this.appendDummyInput()
@@ -34,10 +36,22 @@ Blockly.Blocks['take_photo'] = {
   }
 };
 
-Blockly.Blocks['take_photo'] = {
+Blockly.Blocks['photo_url'] = {
+  init: function() {
+    this.appendValueInput("URL")
+        .setCheck("String")
+        .appendField("Open photo URL");
+    this.setNextStatement(true, "image");
+    this.setColour(150);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+Blockly.Blocks['test_photo'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Take a photo");
+        .appendField("Test Photo Input");
     this.setNextStatement(true, "image");
     this.setColour(150);
     this.setTooltip('');
