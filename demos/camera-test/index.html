@@ -30,6 +30,11 @@
     }
     #blocklyArea {
       height: 99%;
+      width: 70%;
+    }
+    #codeArea {
+      width: 30%;
+      vertical-align: top;
     }
   </style>
 </head>
@@ -46,6 +51,10 @@
     </tr>
     <tr>
       <td id="blocklyArea">
+      </td>
+      <td id="codeArea">
+        <h2>Python Code</h2>
+        <pre id="codeDiv" style="position: absolute">Code will appear here.</pre>
       </td>
     </tr>
   </table>
@@ -64,7 +73,6 @@
     <block type="save_to_desktop"></block>
     <block type="print"></block>
     <block type="email"></block>
-    select_a_photo
   </xml>
 
   <script>
@@ -105,6 +113,12 @@
     };
     window.addEventListener('resize', onresize, false);
     onresize();
+
+    function myUpdateFunction(event) {
+      var LiveCode = Blockly.Python.workspaceToCode(workspace);
+      document.getElementById('codeDiv').innerHTML = LiveCode;
+    }
+    workspace.addChangeListener(myUpdateFunction);
   </script>
 </body>
 </html>
