@@ -18,3 +18,8 @@ Blockly.Python['save_to_desktop'] = function(block) {
   var code = 'image.save("/home/pi/Desktop/myPhoto.jpg")\n';
   return code;
 };
+
+Blockly.Python['display_on_screen'] = function(block) {
+  var code = 'image.save("/tmp/myPhoto.jpg")\n';
+  return code;
+};
